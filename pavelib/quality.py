@@ -328,7 +328,7 @@ def run_complexity():
     print("--> Calculating cyclomatic complexity of python files...")
     try:
         sh(
-            "radon cc {system_string} --total-average > {complexity_report}".format(
+            "python -m mccabe --min 10 {system_string} > {complexity_report}".format(
                 system_string=system_string,
                 complexity_report=complexity_report
             )
