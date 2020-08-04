@@ -78,7 +78,8 @@ edx-celeryutils
 edx-completion
 edx-django-release-util             # Release utils for the edx release pipeline
 edx-django-sites-extensions
-edx-django-utils
+# TODO(jinder): uncomment below after plugin code has been moved
+# edx-django-utils
 edx-drf-extensions
 edx-enterprise
 edx-milestones
