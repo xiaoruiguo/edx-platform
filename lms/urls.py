@@ -12,6 +12,9 @@ from django.views.generic.base import RedirectView
 from edx_api_doc_tools import make_docs_urls
 from ratelimitbackend import admin
 
+from edx_django_utils.plugins import constants as plugin_constants
+from edx_django_utils.plugins import plugin_urls
+
 from branding import views as branding_views
 from debug import views as debug_views
 from lms.djangoapps.certificates import views as certificates_views
@@ -41,8 +44,6 @@ from openedx.core.djangoapps.django_comment_common.models import ForumsConfig
 from openedx.core.djangoapps.lang_pref import views as lang_pref_views
 from openedx.core.djangoapps.password_policy import compliance as password_policy_compliance
 from openedx.core.djangoapps.password_policy.forms import PasswordPolicyAwareAdminAuthForm
-from edx_django_utils.plugins import constants as plugin_constants
-from edx_django_utils.plugins import plugin_urls
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.self_paced.models import SelfPacedConfiguration
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers

@@ -7,9 +7,9 @@ Signal handlers are connected here.
 
 from django.apps import AppConfig
 from django.conf import settings
-from edx_proctoring.runtime import set_runtime_service
-
 from edx_django_utils.plugins.constants import PluginSettings, PluginURLs, ProjectType, SettingsType
+
+from edx_proctoring.runtime import set_runtime_service
 
 
 class GradesConfig(AppConfig):

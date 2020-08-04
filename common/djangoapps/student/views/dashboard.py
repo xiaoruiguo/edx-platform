@@ -19,12 +19,16 @@ from opaque_keys.edx.keys import CourseKey
 from pytz import UTC
 from six import iteritems, text_type
 
+from edx_django_utils.plugins import constants as plugin_constants
+from edx_django_utils.plugins.plugin_contexts import get_plugins_view_context
+
 import track.views
 from bulk_email.api import is_bulk_email_feature_enabled
 from bulk_email.models import Optout
 from course_modes.models import CourseMode
 from edxmako.shortcuts import render_to_response, render_to_string
 from entitlements.models import CourseEntitlement
+
 from lms.djangoapps.commerce.utils import EcommerceService
 from lms.djangoapps.courseware.access import has_access
 from lms.djangoapps.experiments.utils import get_dashboard_course_info
@@ -35,8 +39,6 @@ from openedx.core.djangoapps.catalog.utils import (
     get_visible_sessions_for_entitlement
 )
 from openedx.core.djangoapps.credit.email_utils import get_credit_provider_attribute_values, make_providers_strings
-from edx_django_utils.plugins import constants as plugin_constants
-from edx_django_utils.plugins.plugin_contexts import get_plugins_view_context
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.programs.utils import ProgramDataExtender, ProgramProgressMeter
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers

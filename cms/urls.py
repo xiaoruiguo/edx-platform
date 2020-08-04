@@ -303,6 +303,7 @@ if 'openedx.testing.coverage_context_listener' in settings.INSTALLED_APPS:
         url(r'coverage_context', include('openedx.testing.coverage_context_listener.urls'))
     ]
 
+# pylint: disable=wrong-import-position, wrong-import-order
 from edx_django_utils.plugins import constants as plugin_constants, plugin_urls
 urlpatterns.extend(plugin_urls.get_patterns(plugin_constants.ProjectType.CMS))
 

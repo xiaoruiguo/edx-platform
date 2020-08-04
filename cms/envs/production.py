@@ -17,10 +17,11 @@ from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse_lazy
 from path import Path as path
 
-from .common import *
-
 from edx_django_utils.plugins import constants as plugin_constants
 from edx_django_utils.plugins import plugin_settings
+
+from .common import *
+
 from openedx.core.lib.derived import derive_settings
 from openedx.core.lib.logsettings import get_logger_config
 from xmodule.modulestore.modulestore_settings import convert_module_store_setting_if_needed
