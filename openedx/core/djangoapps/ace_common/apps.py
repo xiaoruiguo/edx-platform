@@ -6,7 +6,7 @@ Configuration for the ace_common Django app.
 from django.apps import AppConfig
 from django.utils.translation import ugettext_lazy as _
 
-from openedx.core.djangoapps.plugins.constants import PluginSettings, ProjectType, SettingsType
+from edx_django_utils.plugins.constants import PluginSettings, ProjectType, SettingsType
 
 
 class AceCommonConfig(AppConfig):

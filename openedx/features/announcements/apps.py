@@ -4,7 +4,7 @@ Announcements Application Configuration
 
 
 from django.apps import AppConfig
-from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType, PluginURLs, PluginSettings
+from edx_django_utils.plugins.constants import ProjectType, SettingsType, PluginURLs, PluginSettings
 
 
 class AnnouncementsConfig(AppConfig):

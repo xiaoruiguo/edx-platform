@@ -26,7 +26,7 @@ from django.utils.translation import ugettext_lazy
 from path import Path as path
 from six.moves import range
 
-from openedx.core.djangoapps.plugins import plugin_settings, constants as plugin_constants
+from edx_django_utils.plugins import plugin_settings, constants as plugin_constants
 from openedx.core.lib.derived import derive_settings
 from openedx.core.lib.tempdir import mkdtemp_clean
 

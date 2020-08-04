@@ -105,7 +105,7 @@ file::
 class::
 
     from django.apps import AppConfig
-    from openedx.core.djangoapps.plugins.constants import (
+    from edx_django_utils.plugins.constants import (
         ProjectType, SettingsType, PluginURLs, PluginSettings, PluginContexts
     )
     class MyAppConfig(AppConfig):

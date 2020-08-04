@@ -35,8 +35,8 @@ from openedx.core.djangoapps.catalog.utils import (
     get_visible_sessions_for_entitlement
 )
 from openedx.core.djangoapps.credit.email_utils import get_credit_provider_attribute_values, make_providers_strings
-from openedx.core.djangoapps.plugins import constants as plugin_constants
-from openedx.core.djangoapps.plugins.plugin_contexts import get_plugins_view_context
+from edx_django_utils.plugins import constants as plugin_constants
+from edx_django_utils.plugins.plugin_contexts import get_plugins_view_context
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.programs.utils import ProgramDataExtender, ProgramProgressMeter
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers

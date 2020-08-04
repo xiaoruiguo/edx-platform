@@ -196,7 +196,7 @@ BLOCKSTORE_API_URL = "http://edx.devstack.blockstore:18250/api/v1/"
 #####################################################################
 
 # pylint: disable=wrong-import-order, wrong-import-position
-from openedx.core.djangoapps.plugins import constants as plugin_constants, plugin_settings
+from edx_django_utils.plugins import constants as plugin_constants, plugin_settings
 
 plugin_settings.add_plugins(__name__, plugin_constants.ProjectType.CMS, plugin_constants.SettingsType.DEVSTACK)
 
