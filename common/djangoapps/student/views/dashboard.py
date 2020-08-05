@@ -19,7 +19,6 @@ from opaque_keys.edx.keys import CourseKey
 from pytz import UTC
 from six import iteritems, text_type
 
-from edx_django_utils.plugins import constants as plugin_constants
 from edx_django_utils.plugins.plugin_contexts import get_plugins_view_context
 
 import track.views
@@ -32,6 +31,7 @@ from entitlements.models import CourseEntitlement
 from lms.djangoapps.commerce.utils import EcommerceService
 from lms.djangoapps.courseware.access import has_access
 from lms.djangoapps.experiments.utils import get_dashboard_course_info
+
 from lms.djangoapps.verify_student.services import IDVerificationService
 from openedx.core.djangoapps.catalog.utils import (
     get_programs,
@@ -39,6 +39,7 @@ from openedx.core.djangoapps.catalog.utils import (
     get_visible_sessions_for_entitlement
 )
 from openedx.core.djangoapps.credit.email_utils import get_credit_provider_attribute_values, make_providers_strings
+from openedx.core.djangoapps.plugins.constants import ProjectType
 from openedx.core.djangoapps.programs.models import ProgramsApiConfig
 from openedx.core.djangoapps.programs.utils import ProgramDataExtender, ProgramProgressMeter
 from openedx.core.djangoapps.site_configuration import helpers as configuration_helpers
@@ -849,7 +850,7 @@ def student_dashboard(request):
     }
 
     context_from_plugins = get_plugins_view_context(
-        plugin_constants.ProjectType.LMS,
+        ProjectType.LMS,
         COURSE_DASHBOARD_PLUGIN_VIEW_NAME,
         context
     )
