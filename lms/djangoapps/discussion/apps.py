@@ -12,7 +12,6 @@ from openedx.core.constants import COURSE_ID_PATTERN
 from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType
 
 
-
 class DiscussionConfig(AppConfig):
     """
     Application Configuration for Discussion.

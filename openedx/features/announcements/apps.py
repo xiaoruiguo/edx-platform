@@ -8,6 +8,7 @@ from edx_django_utils.plugins.constants import PluginURLs, PluginSettings
 
 from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType
 
+
 class AnnouncementsConfig(AppConfig):
     """
     Application Configuration for Announcements
