@@ -17,8 +17,9 @@ from django.core.exceptions import ImproperlyConfigured
 from django.urls import reverse_lazy
 from path import Path as path
 
-from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType
 from edx_django_utils.plugins import plugin_settings
+
+from openedx.core.djangoapps.plugins.constants import ProjectType, SettingsType
 
 from .common import *
 
