@@ -105,7 +105,7 @@ edx-ccx-keys==1.1.0       # via -r requirements/edx/base.txt
 edx-celeryutils==0.5.1    # via -r requirements/edx/base.txt, super-csv
 edx-completion==3.2.4     # via -r requirements/edx/base.txt
 # TODO(jinder): remove before merge
--e git+https://github.com/edx/edx-django-utils.git@msingh/add/plugin#egg=edx-toggles
+-e git+https://github.com/edx/edx-toggles.git@msingh/add/plugin#egg=edx-toggles
 edx-django-release-util==0.4.4  # via -r requirements/edx/base.txt
 edx-django-sites-extensions==2.5.1  # via -r requirements/edx/base.txt
 -e git+https://github.com/edx/edx-django-utils.git@msingh/extract/plugins_infra#egg=edx-django-utils   # via -r requirements/edx/base.txt, django-config-models, edx-drf-extensions, edx-enterprise, edx-rest-api-client, edx-when
