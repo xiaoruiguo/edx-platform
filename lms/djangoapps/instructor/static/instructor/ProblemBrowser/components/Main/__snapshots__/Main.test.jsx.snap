@@ -16,10 +16,10 @@ exports[`ProblemBrowser Main component render with basic parameters 1`] = `
       Select a section or problem
     </span>
     <span
-      style={
-        Object {
-          "float": "right",
-        }
+      className={
+        Array [
+          "pull-right",
+        ]
       }
     >
       <div>
@@ -61,10 +61,10 @@ exports[`ProblemBrowser Main component render with selected block 1`] = `
       some-selected-block
     </span>
     <span
-      style={
-        Object {
-          "float": "right",
-        }
+      className={
+        Array [
+          "pull-right",
+        ]
       }
     >
       <div>
