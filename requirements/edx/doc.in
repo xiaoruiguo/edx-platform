@@ -1,7 +1,7 @@
 # Requirements for documentation validation
 -c ../constraints.txt
 
-git+https://github.com/regisb/code-annotations@regisb/toggles-config-and-tools          # provides annotations for certain documentation TODO install from pypi
+git+https://github.com/edx/code-annotations@regisb-regisb/toggles-config-and-tools          # provides annotations for certain documentation TODO install from pypi
 edx_sphinx_theme          # edX theme for Sphinx output
 gitpython                 # fetch git repo information
 Sphinx                    # Documentation builder
