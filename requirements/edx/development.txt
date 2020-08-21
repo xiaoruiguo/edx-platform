@@ -69,7 +69,7 @@ django-crum==0.7.7        # via -r requirements/edx/testing.txt, edx-enterprise,
 django-debug-toolbar==2.2  # via -r requirements/edx/development.in
 django-fernet-fields==0.6  # via -r requirements/edx/testing.txt, edx-enterprise, edxval
 django-filter==2.3.0      # via -r requirements/edx/testing.txt, edx-enterprise
-django-ipware==2.1.0      # via -c requirements/edx/../constraints.txt, -r requirements/edx/testing.txt, edx-enterprise, edx-proctoring
+django-ipware==3.0.1      # via -r requirements/edx/testing.txt, edx-enterprise, edx-proctoring
 django-js-asset==1.2.2    # via -r requirements/edx/testing.txt, django-mptt
 django-method-override==1.0.4  # via -r requirements/edx/testing.txt
 django-model-utils==4.0.0  # via -r requirements/edx/testing.txt, django-user-tasks, edx-bulk-grades, edx-celeryutils, edx-completion, edx-enterprise, edx-milestones, edx-organizations, edx-proctoring, edx-rbac, edx-submissions, edx-when, edxval, ora2, super-csv
@@ -110,7 +110,7 @@ edx-django-release-util==0.4.4  # via -r requirements/edx/testing.txt
 edx-django-sites-extensions==2.5.1  # via -r requirements/edx/testing.txt
 edx-django-utils==3.7.3   # via -r requirements/edx/testing.txt, django-config-models, edx-drf-extensions, edx-enterprise, edx-rest-api-client, edx-when
 edx-drf-extensions==6.1.1  # via -r requirements/edx/testing.txt, edx-completion, edx-enterprise, edx-organizations, edx-proctoring, edx-rbac, edx-when, edxval
-edx-enterprise==3.7.0     # via -c requirements/edx/../constraints.txt, -r requirements/edx/testing.txt
+git+https://github.com/edx/edx-enterprise@30c65fd7ba74538f5b874be663b168a3eb4ea0ea#egg=edx-enterprise==3.7.1     # via -c requirements/edx/../constraints.txt, -r requirements/edx/testing.txt
 edx-i18n-tools==0.5.3     # via -r requirements/edx/testing.txt, ora2
 edx-lint==1.5.2           # via -r requirements/edx/testing.txt
 edx-milestones==0.3.0     # via -r requirements/edx/testing.txt

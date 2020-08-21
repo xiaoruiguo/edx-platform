@@ -21,7 +21,6 @@ from django.utils.translation import get_language
 from django.utils.translation import ugettext as _
 from django.views.decorators.csrf import csrf_exempt, ensure_csrf_cookie
 from django.views.decorators.debug import sensitive_post_parameters
-from ipware.ip import get_ip
 from pytz import UTC
 from ratelimit.decorators import ratelimit
 from requests import HTTPError

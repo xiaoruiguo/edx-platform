@@ -7,14 +7,14 @@ import json
 import re
 import six
 
-from django.test import TestCase
+from django.test import TransactionTestCase
 from django.test.utils import override_settings
 
 TEST_API_KEY = "test_api_key"
 
 
 @override_settings(EDX_API_KEY=TEST_API_KEY)
-class ApiTestCase(TestCase):
+class ApiTestCase(TransactionTestCase):
     """
     Parent test case for API workflow coverage
     """

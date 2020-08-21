@@ -26,7 +26,7 @@ from django.urls import reverse
 from django.utils.translation import ugettext as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods, require_POST
-from ipware.ip import get_ip
+from ipware.ip import get_client_ip
 from opaque_keys import InvalidKeyError
 from opaque_keys.edx.keys import CourseKey
 from opaque_keys.edx.locator import CourseLocator
@@ -352,7 +352,7 @@ def register_code_redemption(request, registration_code):
 
         # Restrict the user from enrolling based on country access rules
         embargo_redirect = embargo_api.redirect_if_blocked(
-            course.id, user=request.user, ip_address=get_ip(request),
+            course.id, user=request.user, ip_address=get_client_ip(request)[0],
             url=request.path
         )
         if embargo_redirect is not None:
@@ -377,7 +377,7 @@ def register_code_redemption(request, registration_code):
 
         # Restrict the user from enrolling based on country access rules
         embargo_redirect = embargo_api.redirect_if_blocked(
-            course.id, user=request.user, ip_address=get_ip(request),
+            course.id, user=request.user, ip_address=get_client_ip(request)[0],
             url=request.path
         )
         if embargo_redirect is not None:
