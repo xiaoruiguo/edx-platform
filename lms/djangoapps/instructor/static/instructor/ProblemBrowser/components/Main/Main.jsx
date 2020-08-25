@@ -5,32 +5,6 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { ReportStatusContainer } from '../ReportStatus/ReportStatusContainer';
 
-// function Selector(props) {
-//   const { showBtn, handleToggleDropdown, selectedBlock } = props;
-//   if (showBtn === 'true') {
-//     return (
-//       <Button
-//         onClick={handleToggleDropdown}
-//         label={gettext('Select a section or problem')}
-//       />
-//     );
-//   }
-//   return (
-//                 // eslint-disable-next-line jsx-a11y/no-static-element-interactions
-//     <span
-//       onClick={handleToggleDropdown}
-//       className={['problem-selector']}
-//     >
-//       <span>{selectedBlock || 'Select a section or problem'}</span>
-//       <span className={['pull-right']}>
-//         <Icon
-//           className={['fa', 'fa-sort']}
-//         />
-//       </span>
-//     </span>
-//     );
-// }
-
 export default class Main extends React.Component {
   constructor(props) {
     super(props);
@@ -61,10 +35,10 @@ export default class Main extends React.Component {
 
   render() {
     const { selectedBlock, onSelectBlock } = this.props;
-    let selectorMand = <Button onClick={this.handleToggleDropdown} label={gettext('Select a section or problem')} />;
-    if (this.props.ShowBtnUi === 'false') {
-      selectorMand =
-        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    let selectorType = <Button onClick={this.handleToggleDropdown} label={gettext('Select a section or problem')} />;
+    if (this.props.showBtnUi === 'false') {
+      selectorType =
+          // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         (<span
           onClick={this.handleToggleDropdown}
           className={['problem-selector']}
@@ -82,13 +56,13 @@ export default class Main extends React.Component {
     return (
       <div className="problem-browser-container">
         <div className="problem-browser">
-          {selectorMand}
+          {selectorType}
           <input
             type="text"
             name="problem-location"
             value={selectedBlock}
             disabled
-            hidden={this.props.ShowBtnUi === 'false'}
+            hidden={this.props.showBtnUi === 'false'}
           />
           {this.state.showDropdown &&
             <BlockBrowserContainer
@@ -119,7 +93,7 @@ Main.propTypes = {
   onSelectBlock: PropTypes.func.isRequired,
   selectedBlock: PropTypes.string,
   taskStatusEndpoint: PropTypes.string.isRequired,
-  ShowBtnUi: PropTypes.string.isRequired,
+  showBtnUi: PropTypes.string.isRequired,
 };
 
 Main.defaultProps = {
