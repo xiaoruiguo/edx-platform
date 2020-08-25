@@ -3104,9 +3104,14 @@ div.staff_actions {
 
 .problem-selector{
     height: 34px;
-    min-width: 300px;
-    max-width: 780px;
+    width: 780px;
     border: 1px solid grey;
     display: block;
     padding: 8px;
+    margin-right: 10px;
+    float: left;
+}
+
+.block-browser{
+    margin-top: 34px;
 }

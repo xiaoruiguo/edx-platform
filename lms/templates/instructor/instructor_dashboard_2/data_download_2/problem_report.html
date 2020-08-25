@@ -13,12 +13,15 @@ from openedx.core.djangolib.markup import HTML, Text
     </h6>
     <div class="mb-15 problems">
         ${static.renderReact(
-        component="ProblemBrowser",
-        id="react-block-listing",
-        props={
-        "courseId": course.id,
-        "excludeBlockTypes": ['html', 'video', 'discussion']
-        }
+          component="ProblemBrowser",
+          id="react-problem-report",
+          props={
+            "courseId": course.id,
+            "excludeBlockTypes": ['html', 'video', 'discussion'],
+            "problemResponsesEndpoint": section_data['get_problem_responses_url'],
+            "taskStatusEndpoint": "/instructor_task_status",
+            "showBtnUi": "true"
+          }
         )}
     </div>
 <!--    <button data-endpoint="${ section_data['get_problem_responses_url'] }" id="download-problem-report"-->
