@@ -90,4 +90,3 @@ class MarketingSiteViewTests(TestCase):
             ),
             status_code=500
         )
-
