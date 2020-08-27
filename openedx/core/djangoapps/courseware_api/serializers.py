@@ -90,6 +90,8 @@ class CourseInfoSerializer(serializers.Serializer):  # pylint: disable=abstract-
     notes = serializers.DictField()
     marketing_url = serializers.CharField()
     celebrations = serializers.DictField()
+    user_has_passing_grade = serializers.BooleanField()
+    course_completion_is_active = serializers.BooleanField()
 
     def __init__(self, *args, **kwargs):
         """
