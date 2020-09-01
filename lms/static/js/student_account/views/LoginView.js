@@ -212,10 +212,23 @@
                     msg = gettext('An error has occurred. Check your Internet connection and try again.');
                 } else if (error.status === 500) {
                     msg = gettext('An error has occurred. Try refreshing the page, or check your Internet connection.'); // eslint-disable-line max-len
-                } else if (error.responseJSON !== undefined) {
+                } else if (error.responseJSON !== undefined && error.responseJSON.error_code === 'unactivated-user') {
+                    msg = _.sprintf(
+                    gettext('In order to sign in, you need to activate your account.<br/><br/>' +
+                            'We just sent an activation link to <strong> %(email)s </strong>. If ' +
+                            ' you do not receive an email, check your spam folders or ' +
+                            ' <a href=%(support_url)s>contact %(platform_name)s Support</a>.'),
+                    {
+                    email: error.responseJSON.payload.email,
+                    platform_name: error.responseJSON.payload.platform_name,
+                    support_url: error.responseJSON.payload.support_url
+                    }
+                );
+                } else if (error.responseJSON !== undefined){
                     msg = error.responseJSON.value;
                     errorCode = error.responseJSON.error_code;
-                } else {
+                }
+                else {
                     msg = gettext('An unexpected error has occurred.');
                 }
 
