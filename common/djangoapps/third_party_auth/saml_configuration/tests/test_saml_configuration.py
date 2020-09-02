@@ -17,6 +17,7 @@ SAML_CONFIGURATIONS = [
         'private_key': 'TestingKey',
         'public_key': 'TestingKey',
         'entity_id': 'example.com',
+        'is_public': True
 
     },
     {
@@ -25,8 +26,22 @@ SAML_CONFIGURATIONS = [
         'private_key': 'TestingKey2',
         'public_key': 'TestingKey2',
         'entity_id': 'edx.example.com',
+        'is_public': True,
     },
 ]
+
+PRIV_CONFIGURATIONS = [
+    {
+        'site': 1,
+        'slug': 'testing3',
+        'private_key': 'TestingKey',
+        'public_key': 'TestingKey',
+        'entity_id': 'example.com',
+        'is_public': False
+
+    },
+]
+
 TEST_PASSWORD = 'testpwd'
 
 @unittest.skipUnless(testutil.AUTH_FEATURE_ENABLED, testutil.AUTH_FEATURES_KEY + ' not enabled')
@@ -47,7 +62,17 @@ class SAMLConfigurationTests(APITestCase):
                 slug=config['slug'],
                 private_key=config['private_key'],
                 public_key=config['public_key'],
-                entity_id=config['entity_id']
+                entity_id=config['entity_id'],
+                is_public=config['is_public']
+            )
+        for config in PRIV_CONFIGURATIONS:
+            cls.samlconfiguration = SAMLConfiguration.objects.get_or_create(
+                site=cls.site,
+                slug=config['slug'],
+                private_key=config['private_key'],
+                public_key=config['public_key'],
+                entity_id=config['entity_id'],
+                is_public=config['is_public']
             )
 
 
@@ -65,6 +90,19 @@ class SAMLConfigurationTests(APITestCase):
         self.assertEqual(results[0]['slug'], SAML_CONFIGURATIONS[0]['slug'])
         self.assertEqual(results[1]['id'], SAML_CONFIGURATIONS[1]['site'])
         self.assertEqual(results[1]['slug'], SAML_CONFIGURATIONS[1]['slug'])
+
+    def test_get_saml_configurations_noprivate(self):
+        # Verify we have 3 saml configuration objects: 2 public, 1 private.
+        total_object_count = SAMLConfiguration.objects.count()
+        self.assertEqual(total_object_count, 3)
+
+        url = reverse('saml_configuration-list')
+        response = self.client.get(url, format='json')
+
+        # We should only see 2 results, since 1 out of 3 are private
+        # and our queryset only returns public configurations.
+        results = response.data['results']
+        self.assertEqual(len(results), 2)
 
 
     def test_unauthenticated_user_get_saml_configurations(self):

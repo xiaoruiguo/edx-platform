@@ -31,14 +31,11 @@ class SAMLConfigurationViewSet(SAMLConfigurationMixin, viewsets.ModelViewSet):
     Usage:
         GET /auth/saml/v0/saml_configuration/
     """
-    #permission_required = 'enterprise.can_access_admin_dashboard'
 
     def get_queryset(self):
         """
         Find and return all saml configurations that are listed as public.
         """
-        # return SAMLConfiguration.objects.current_set().filter(public=True)
-        return SAMLConfiguration.objects.current_set()
+        return SAMLConfiguration.objects.current_set().filter(is_public=True)
 
-    # TODO: Permissions?
 
