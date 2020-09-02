@@ -228,7 +228,7 @@ class DemographicsCollectionModal extends React.Component {
                 </p>
                 <br />
                 <span className="fa-info-circle" />
-                <a className="pl-3">
+                <a className="pl-3" href={`/demographics`}>
                   {gettext('Why does edX collect this information?')}
                 </a>
                 <br />
