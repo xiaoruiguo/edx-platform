@@ -80,7 +80,7 @@ edx-django-release-util             # Release utils for the edx release pipeline
 edx-django-sites-extensions
 edx-django-utils
 edx-drf-extensions
-edx-enterprise
+-e git+https://github.com/edx/acid-block.git@ea48c47c928115c594b90b56d177695485c273d5#egg=edx-enterprise
 edx-milestones
 edx-organizations
 edx-proctoring>=2.0.1
