@@ -228,7 +228,8 @@ class DemographicsCollectionModal extends React.Component {
                 </p>
                 <br />
                 <span className="fa-info-circle" />
-                <a className="pl-3" href={`/demographics`}>
+                {/* Need to strip out extra '"' characters in the marketingSiteBaseUrl prop or it tries to setup the href as a relative URL */}
+                <a className="pl-3" href={`${this.props.marketingSiteBaseUrl}/demographics`.replace(/"/g, "")}>
                   {gettext('Why does edX collect this information?')}
                 </a>
                 <br />
